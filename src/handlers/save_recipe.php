@@ -5,28 +5,15 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-/**
- * Подключаем вспомогательные функции
- */
 include_once('../helpers.php');
 
-/**
- * Массив для ошибок
- *
- * @var array
- */
 $errors = [];
 
 /**
  * Обработка данных формы
- * Проверяем, была ли отправлена форма методом POST.
  */
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    /**
-     * Путь к файлу с рецептами
-     *
-     * @var string
-     */
+  
     $recipeFile = '../../storage/recipes.txt';
     
     /**
@@ -64,8 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         /**
          * Формируем данные для записи в файл
-         *
-         * @var array
          */
         $formData = [
             'title' => $title,
